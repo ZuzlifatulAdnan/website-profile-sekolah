@@ -41,10 +41,23 @@ class BeritaResource extends Resource
                         'Event' => 'Event',
                     ])
                     ->required(),
-                Forms\Components\Textarea::make('deskripsi')
-                    ->label('Deskripsi')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                Forms\Components\RichEditor::make('deskripsi')
+                ->label('Deskripsi')
+                ->required()
+                ->toolbarButtons([
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strike',
+                    'link',
+                    'bulletList',
+                    'orderedList',
+                    'blockquote',
+                    'codeBlock',
+                    'redo',
+                    'undo',
+                ])
+                ->placeholder('Tulis deskripsi berita...'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Foto Berita')
                     ->image()

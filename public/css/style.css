@@ -1867,8 +1867,13 @@ h6 .badge {
   padding-right: 5px;
 }
 
+/* Custom Navbar */
+/* Branding logo */
+
+
 /* 3.18 Navbar */
-.navbar {
+
+/* .navbar {
   height: 70px;
   left: 250px;
   right: 5px;
@@ -2350,7 +2355,7 @@ a.dropdown-item:focus, a.dropdown-item:active, a.dropdown-item.active {
     left: 10px !important;
     width: calc(100% - 20px);
   }
-}
+} */
 /* 3.20 Dropdown */
 .tab-content.no-padding > .tab-pane {
   padding: 0;
@@ -3039,7 +3044,6 @@ pre {
   left: 0;
 }
 
-.main-sidebar,
 .navbar,
 .main-content,
 .main-footer {
@@ -3179,9 +3183,9 @@ body.sidebar-mini .main-sidebar .sidebar-menu li:hover > ul.dropdown-menu li .dr
 body.sidebar-mini .navbar {
   left: 65px;
 }
-body.sidebar-mini .main-content, body.sidebar-mini .main-footer {
+/* body.sidebar-mini .main-content, body.sidebar-mini .main-footer {
   padding-left: 90px;
-}
+} */
 
 body.layout-2 .navbar-bg {
   z-index: 889;
@@ -3196,12 +3200,12 @@ body.layout-2 .main-wrapper {
   flex-wrap: wrap;
   padding: 0 50px;
 }
-body.layout-2 .main-sidebar,
+/* body.layout-2 .main-sidebar,
 body.layout-2 .main-content,
 body.layout-2 .main-footer {
   flex-shrink: 0;
   flex-grow: 0;
-}
+} */
 body.layout-2 .main-sidebar {
   background-color: transparent;
   box-shadow: none;
@@ -3237,12 +3241,12 @@ body.layout-2 .main-sidebar .sidebar-menu li.active ul.dropdown-menu {
 body.layout-2 .main-sidebar .sidebar-menu li.active ul.dropdown-menu a {
   background-color: transparent;
 }
-body.layout-2 .main-content {
+/* body.layout-2 .main-content {
   padding-top: 107px;
   padding-left: 30px;
   padding-right: 0;
   width: calc(100% - 200px);
-}
+} */
 body.layout-2 .main-footer {
   margin-left: 230px;
   width: calc(100% - 230px);
@@ -3358,11 +3362,11 @@ body.layout-3 .navbar.navbar-secondary .navbar-nav > .nav-item .dropdown-menu .n
   background-color: #6777ef;
   color: #fff;
 }
-body.layout-3 .main-content {
+/* body.layout-3 .main-content {
   padding-left: 0;
   padding-right: 0;
   padding-top: 170px;
-}
+} */
 body.layout-3 .main-footer {
   padding-left: 0;
   padding-right: 0;
@@ -3503,7 +3507,7 @@ body.layout-3 .main-footer {
 }
 
 .main-content {
-  padding-left: 280px;
+  padding-left: 30px;
   padding-right: 30px;
   padding-top: 80px;
   width: 100%;

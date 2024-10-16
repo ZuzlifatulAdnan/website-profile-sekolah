@@ -9,7 +9,7 @@ class Profile extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'selection',
+        'section',
         'deskripsi',
     ];
     protected $table = 'profiles';

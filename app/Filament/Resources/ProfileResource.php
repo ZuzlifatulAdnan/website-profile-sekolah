@@ -30,7 +30,8 @@ class ProfileResource extends Resource
                 Forms\Components\Select::make('section')
                 ->label('Kategor Profile')
                     ->options([
-                        'Visi dan Misi' => 'Visi dan Misi',
+                        'Visi' => 'Visi',
+                        'Misi' => 'Misi',
                         'Sejarah' => 'Sejarah',
                         'Sambutan' => 'Sambutan',
                     ])
@@ -40,11 +41,22 @@ class ProfileResource extends Resource
                     ->image()
                     ->directory('uploads/profile')
                     ->visibility('public'),
-                Forms\Components\Textarea::make('deskripsi')
-                ->label('Deskripsi Profile')
-                    ->required()
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                Forms\Components\RichEditor::make('deskripsi')
+                ->label('Deskripsi')
+                ->required()
+                ->toolbarButtons([
+                    'bold',
+                    'italic',
+                    'underline',
+                    'strike',
+                    'link',
+                    'bulletList',
+                    'orderedList',
+                    'blockquote',
+                    'codeBlock',
+                    'redo',
+                    'undo',
+                ])
             ]);
     }
 

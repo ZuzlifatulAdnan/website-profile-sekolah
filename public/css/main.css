@@ -1,0 +1,457 @@
+/* Basic Navbar Styling */
+.navbar {
+  position: sticky;
+  /* Atur posisi sticky */
+  top: 0;
+  /* Menjaga navbar di atas saat scroll */
+  background-color: white !important;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 20px;
+  z-index: 1000;
+  /* Pastikan navbar berada di atas elemen lainnya */
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+  width: auto;
+}
+
+.navbar-brand span {
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 10px;
+  /* Space between logo and text */
+}
+
+/* Navbar Links */
+.navbar-nav {
+  padding: 0 15px;
+}
+
+.navbar-nav .nav-link {
+  color: black;
+  font-weight: 500;
+  margin-right: 20px;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+/* Active and Hover States */
+.nav-item.active .nav-link,
+.navbar-nav .nav-link:hover {
+  color: blue;
+  border-bottom: 3px solid blue;
+}
+
+/* Dropdown Styling */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  background-color: white;
+  transition: opacity 0.3s ease;
+}
+
+/* Dropdown Item Styling to Match Navbar */
+.dropdown-menu .dropdown-item {
+  font-size: 1.1rem;
+  /* Match font size with navbar links */
+  color: black;
+  /* Same text color */
+  font-weight: 500;
+  /* Same font weight */
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: blue;
+  /* Change color on hover */
+  background-color: #e9ecef;
+  /* Hover background color */
+}
+
+/* Responsive Styling */
+
+/* For screens wider than 1200px */
+@media (max-width: 1200px) {
+  .navbar-brand img {
+    max-height: 45px;
+  }
+
+  .navbar-nav .nav-link,
+  .dropdown-menu .dropdown-item {
+    /* Matching font size for dropdown items */
+    font-size: 1.3rem;
+  }
+}
+
+/* For screens wider than 992px */
+@media (max-width: 992px) {
+  .navbar-brand img {
+    max-height: 50px;
+  }
+
+  .navbar-nav .nav-link,
+  .dropdown-menu .dropdown-item {
+    /* Matching font size for dropdown items */
+    font-size: 1.2rem;
+    margin-right: 15px;
+  }
+}
+
+/* For screens wider than 768px */
+@media (max-width: 768px) {
+  .navbar-brand img {
+    max-height: 60px;
+  }
+
+  .navbar-nav .nav-link,
+  .dropdown-menu .dropdown-item {
+    /* Matching font size for dropdown items */
+    font-size: 1rem;
+    margin-right: 10px;
+  }
+}
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  .navbar-brand img {
+    max-height: 50px;
+  }
+
+  .navbar-nav .nav-link,
+  .dropdown-menu .dropdown-item {
+    /* Matching font size for dropdown items */
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+}
+
+/* For screens smaller than 500px */
+@media (max-width: 500px) {
+  .navbar-brand img {
+    max-height: 40px;
+  }
+
+  .navbar-nav .nav-link,
+  .dropdown-menu .dropdown-item {
+    /* Matching font size for dropdown items */
+    font-size: 0.8rem;
+    margin-right: 5px;
+  }
+}
+
+/* Navbar Toggler Styling */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Tombol Scroll to Top */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  /* Jarak dari bawah */
+  right: 20px;
+  /* Jarak dari kanan */
+  display: none;
+  /* Tersembunyi secara default */
+  background-color: #007bff;
+  /* Warna latar belakang biru */
+  color: white;
+  /* Warna teks (ikon) */
+  border: none;
+  /* Tanpa border */
+  border-radius: 5px;
+  /* Sudut melengkung */
+  padding: 10px;
+  /* Padding */
+  cursor: pointer;
+  /* Pointer saat hover */
+  font-size: 18px;
+  /* Ukuran font */
+  z-index: 1000;
+  /* Pastikan di atas elemen lain */
+  transition: background-color 0.3s;
+  /* Efek transisi */
+}
+
+.scroll-to-top:hover {
+  background-color: #0056b3;
+  /* Warna saat hover lebih gelap */
+}
+
+/* Gaya untuk ikon di dalam tombol */
+.scroll-to-top i {
+  font-size: 16px;
+  /* Ukuran ikon */
+}
+
+/* Footer */
+/* Styling footer */
+.footer {
+  background-color: #ffffff;
+  /* Warna latar belakang putih */
+  padding: 40px 20px;
+  /* Padding atas dan bawah, kiri dan kanan sama */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  /* Bayangan lembut di bagian atas footer */
+}
+
+.footer h5 {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+  /* Warna teks untuk judul */
+}
+
+.footer .list-unstyled {
+  padding-left: 0;
+}
+
+.footer .list-unstyled li {
+  margin-bottom: 10px;
+  color: #6c757d;
+  /* Warna teks untuk footer */
+}
+
+.footer .list-unstyled li a {
+  color: black;
+  /* Warna tautan menjadi hitam */
+  text-decoration: none;
+  /* Menghapus garis bawah */
+  transition: color 0.3s;
+  /* Transisi warna saat hover */
+}
+
+.footer .list-unstyled li a:hover {
+  color: #0056b3;
+  /* Warna tautan saat hover */
+  text-decoration: underline;
+  /* Garis bawah saat hover */
+}
+
+.footer img {
+  height: 50px;
+  /* Ukuran logo */
+}
+
+/* Responsivitas tambahan */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+    /* Pusatkan teks di mobile */
+  }
+
+  .footer .row {
+    margin-bottom: 20px;
+    /* Ruang bawah untuk kolom */
+  }
+
+  .footer h5 {
+    margin-bottom: 10px;
+    /* Jarak judul yang lebih kecil */
+  }
+}
+/* Set the carousel to be responsive */
+#carouselExampleIndicators3 {
+  width: 100%;
+  /* Full width */
+  height: 500px;
+  /* Set carousel height to 100px */
+  margin: auto;
+  /* Center the carousel */
+}
+
+/* Ensure the images fit the carousel responsively */
+.carousel-item img {
+  width: 100%;
+  /* Responsive width */
+  height: 500px;
+  /* Set image height to 100px */
+  object-fit: cover;
+  /* Ensure the image covers the container area while maintaining aspect ratio */
+}
+
+/* Optional: set a minimum height to maintain aspect ratio */
+.carousel-item {
+  min-height: 500px;
+  /* Set minimum height to 100px */
+}
+
+/* Media query for different screen sizes */
+@media (max-width: 768px) {
+  .carousel-item {
+    min-height: 100px;
+    /* Maintain 100px height for smaller screens as well */
+  }
+}
+
+/* Custom Tabs Style */
+.custom-tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: none;
+  flex-wrap: wrap;
+}
+
+.custom-tabs .nav-item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.custom-tabs .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid transparent;
+  padding: 20px 0;
+  margin: 0 5px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: #333;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Tambahkan shadow di sini */
+}
+
+.custom-tabs .nav-link i {
+  margin-bottom: 8px;
+  font-size: 32px;
+  color: #007bff;
+  /* Warna ikon default */
+}
+
+.custom-tabs .nav-link.active {
+  background-color: #007bff;
+  /* Background tab aktif */
+  color: white;
+  /* Warna teks aktif */
+  border: 1px solid #007bff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Shadow lebih gelap untuk tab aktif */
+}
+
+.custom-tabs .nav-link.active i {
+  color: white;
+  /* Warna ikon menjadi putih saat tab aktif */
+}
+
+.custom-tabs .nav-link:hover {
+  background-color: #f1f1f1;
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.custom-tabs .nav-link:hover i {
+  color: #007bff;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 576px) {
+  .custom-tabs .nav-link {
+    font-size: 12px;
+    padding: 15px 0;
+  }
+
+  .custom-tabs .nav-link i {
+    font-size: 24px;
+  }
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 768px) {
+  .custom-tabs {
+    flex-wrap: wrap;
+  }
+
+  .custom-tabs .nav-item {
+    flex-grow: 1;
+    flex-basis: 45%;
+    margin-bottom: 10px;
+  }
+}
+/* Mengatur tampilan ul */
+.custom-misi {
+  padding-left: 0; /* Menghapus padding default dari ul */
+  margin: 0; /* Menghapus margin default dari ul */
+}
+
+/* Menghapus bullet dari elemen li */
+.custom-misi li {
+  list-style: none; /* Hilangkan bullet (titik) di sebelah ikon */
+  display: flex; /* Mengatur layout flex untuk item */
+  align-items: center; /* Memusatkan vertikal */
+  margin-bottom: 10px; /* Jarak antara item */
+  font-size: 16px; /* Ukuran font default untuk teks */
+}
+
+/* Warna ikon pada bagian misi */
+.custom-misi li i.fa-solid.fa-circle-check {
+  color: #007bff; /* Warna biru untuk ikon */
+  font-size: 16px; /* Ukuran default ikon */
+  margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+/* Responsif untuk tablet dan layar lebih besar */
+@media (min-width: 768px) {
+  .custom-misi li {
+    font-size: 18px; /* Ukuran lebih besar untuk tablet */
+  }
+
+  .custom-misi li i.fa-solid.fa-circle-check {
+    font-size: 18px; /* Ukuran lebih besar untuk ikon pada tablet */
+  }
+}
+
+/* Responsif untuk layar lebih besar (desktop) */
+@media (min-width: 992px) {
+  .custom-misi li {
+    font-size: 20px; /* Ukuran lebih besar untuk desktop */
+  }
+
+  .custom-misi li i.fa-solid.fa-circle-check {
+    font-size: 20px; /* Ukuran lebih besar untuk ikon pada desktop */
+  }
+}
+
+/* Responsif untuk layar sangat kecil (ponsel kecil) */
+@media (max-width: 576px) {
+  .custom-misi li {
+    font-size: 14px; /* Ukuran lebih kecil untuk ponsel kecil */
+  }
+
+  .custom-misi li i.fa-solid.fa-circle-check {
+    font-size: 14px; /* Ukuran ikon lebih kecil */
+  }
+}
+.modal {
+  z-index: 1055 !important; /* Ensures modal is above most elements */
+  top: 50px; /* Adjust as needed */
+}
+
+.modal-backdrop {
+  z-index: 1050 !important; /* Ensures the backdrop is below the modal */
+}
+
