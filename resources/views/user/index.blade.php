@@ -369,7 +369,7 @@
                             </h3>
                             <div class="row justify-content-center g-4">
                                 <!-- Video Section -->
-                                <div class="col-md-8">
+                                <div class="col-md-8 video-zoom-in">
                                     <div class="tab-content">
                                         @foreach ($videos as $video)
                                             <!-- Dynamic Tab Content for each video -->

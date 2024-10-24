@@ -143,7 +143,7 @@ class PpdbController extends Controller
                 'jurusans' => $jurusans,
                 // Main
                 'kuota' => $kuota,
-                'annoucment'=>$announcement
+                'announcement' => $announcement,
             ]
         );
     }
@@ -169,7 +169,7 @@ class PpdbController extends Controller
             'kuota' => $kuota,
             'kategoriBerita' => $kategoriBerita,
             'beritaTerbaru' => $beritaTerbaru,
-            'annoucment'=>$announcement
+            'announcement' => $announcement,
         ]);
     }
 }
