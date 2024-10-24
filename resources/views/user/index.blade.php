@@ -13,7 +13,7 @@
                     class="{{ $key === 0 ? 'active' : '' }}"></li>
             @endforeach
         </ol>
-        <div class="carousel-inner">
+        <div class="carousel-inner zoom-in-effect">
             @foreach ($hero as $key => $item)
                 <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
                     <img class="d-block w-100" src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->alt_text }}">
@@ -93,7 +93,7 @@
                                         {!! html_entity_decode($misi->deskripsi) !!}
                                     </p>
                                 </div>
-                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate"
+                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
                                     <img src="https://smkn4-bdl.sch.id/public/img/section/1705899671_fdc4b6337eff3d31abad.png"
                                         alt="" class="img-fluid">
@@ -112,7 +112,7 @@
                                     <p>{!! $sambutan->deskripsi !!}</p>
                                 </div>
                                 <!-- Kolom Gambar Kepala Sekolah -->
-                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate"
+                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
                                     <img src="{{ asset('storage/' . $sambutan->foto) }}" alt="Kepala Sekolah"
                                         class="img-fluid">
@@ -186,7 +186,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate"
+                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
                                     <img src="https://smkn4-bdl.sch.id/public/template/frontend/herobiz/desktop/assets/img/pengumuman.png"
                                         alt="" class="img-fluid">
@@ -246,7 +246,7 @@
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
-                                                        <div class="modal-body"
+                                                        <div class="modal-body zoom-in-effect"
                                                             style="max-height: 400px; overflow-y: auto;">
                                                             <div class="text-muted small mb-2">
                                                                 <i class="fas fa-calendar-alt"></i>
@@ -276,7 +276,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate"
+                                <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
                                     <img src="https://smkn4-bdl.sch.id/public/template/frontend/herobiz/desktop/assets/img/pengumuman.png"
                                         alt="" class="img-fluid">
@@ -295,7 +295,7 @@
                             </h3>
                             <div class="row justify-content-center g-4">
                                 @foreach ($infografis as $item)
-                                    <div class="col-xl-4 col-md-6">
+                                    <div class="col-xl-4 col-md-6 zoom-in-effect">
                                         <button type="button" class="btn" data-toggle="modal"
                                             data-target="#infografisModal{{ $item->id }}">
                                             <div class="card aos-init aos-animate" data-aos="zoom-in"
@@ -426,7 +426,7 @@
                             @foreach ($penghargaan as $item)
                                 <div class="col-md-4 mb-4">
                                     <div class="card shadow d-flex flex-column align-items-center" style="width: 100%;">
-                                        <div class="card-body d-flex flex-column align-items-center text-center px-4">
+                                        <div class="card-body d-flex flex-column align-items-center text-center px-4 zoom-in-effect">
                                             @if ($item->image)
                                                 <img src="{{ asset('storage/' . $item->image) }}"
                                                     alt="Profile picture of {{ $item->judul }}" class="img-fluid"
@@ -493,7 +493,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($berita as $item)
-                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                <div class="col-12 col-sm-6 col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow-sm d-flex flex-column align-items-cente"
                                         style="min-height: 400px;">
                                         @if ($item->image)
@@ -554,7 +554,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($staff as $item)
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow d-flex flex-column align-items-center" style="width: 100%;">
                                         <div class="card-body d-flex flex-column align-items-center text-center px-4">
                                             @if ($item->image)
@@ -642,7 +642,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($alumni as $item)
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow" style="width: 100%;">
                                         <div class="card-body text-center">
                                             @if ($item->image)
@@ -733,7 +733,7 @@
                 <div class="card-body">
                     <div class="row justify-content-center g-4">
                         @foreach ($videos as $video)
-                            <div class="col-12 col-md-6 mb-4">
+                            <div class="col-12 col-md-6 mb-4 video-zoom-in">
                                 <!-- Use col-12 for small screens and col-md-6 for medium and up -->
                                 <div class="video-item">
                                     <h4 class="text-center">{{ $video->judul }}</h4>
@@ -754,30 +754,7 @@
         </div>
     </div>
     {{-- <div class="container"> --}}
-    <!-- Modal -->
-    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="welcomeModalLabel">{{ $announcement->judul }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" style="max-height: 60vh; overflow-y: auto;">
-                    <img src="{{ asset('storage/' . $announcement->image) }}" class="img-fluid" alt="Deskripsi Gambar">
-                </div>
-                <div class="modal-footer">
-                    <a href="https://instagram.com/yourusername" target="_blank" class="btn btn-info">
-                        <i class="fab fa-instagram"></i> Ikuti Kami di Instagram
-                    </a>
-                    <button type="button" class="btn btn-secondary" id="dismissModalButton">Jangan Tampilkan
-                        Lagi</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     {{-- </div> --}}
 @endsection
 

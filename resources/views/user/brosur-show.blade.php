@@ -29,7 +29,7 @@
                                 </h3>
 
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-12" zoom-in-effect>
                                         @if ($brosur->image)
                                             <!-- Responsive image with max height to fit different screen sizes -->
                                             <img src="{{ asset('storage/' . $brosur->image) }}" alt="{{ $brosur->judul }}"

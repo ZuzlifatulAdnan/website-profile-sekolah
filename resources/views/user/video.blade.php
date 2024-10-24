@@ -24,7 +24,7 @@
             </h3>
             <div class="card-body">
                 <div class="row justify-content-center g-4">
-                    <div class="col-md-8">
+                    <div class="col-md-8 video-zoom-in">
                         <div class="tab-content">
                             @foreach ($videos as $video)
                                 <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" 

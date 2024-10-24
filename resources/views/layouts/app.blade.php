@@ -51,6 +51,30 @@
 
             <!-- Footer -->
             @include('components.footer')
+            <!-- Modal -->
+    <div class="modal fade" id="welcomeModal" tabindex="-1" role="dialog" aria-labelledby="welcomeModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="welcomeModalLabel">{{ $announcement->judul }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: 100vh; overflow-y: auto;">
+                <img src="{{ asset('storage/' . $announcement->image) }}" class="img-fluid" alt="Deskripsi Gambar">
+            </div>
+            <div class="modal-footer">
+                <a href="https://instagram.com/yourusername" target="_blank" class="btn btn-primary">
+                    <i class="fab fa-instagram"></i> Ikuti Kami di Instagram
+                </a>
+                <button type="button" class="btn btn-danger" id="dismissModalButton">Jangan Tampilkan
+                    Lagi</button>
+            </div>
+        </div>
+    </div>
+</div>
         </div>
     </div>
 
@@ -70,15 +94,15 @@
     <script src="{{ asset('js/custom.js') }}"></script>
     <script>
         // Cek apakah pengguna ingin menyembunyikan modal
-        if (!localStorage.getItem('hideWelcomeModal')) {
+        if (!sessionStorage.getItem('hideWelcomeModal')) {
             // Tampilkan modal
             $('#welcomeModal').modal('show');
         }
-
+    
         // Event listener untuk tombol "Jangan Tampilkan Lagi"
         document.getElementById('dismissModalButton').addEventListener('click', function() {
             $('#welcomeModal').modal('hide'); // Menyembunyikan modal
-            localStorage.setItem('hideWelcomeModal', 'true'); // Simpan status agar tidak tampil lagi
+            sessionStorage.setItem('hideWelcomeModal', 'true'); // Simpan status agar tidak tampil lagi selama sesi ini
         });
     </script>
 </body>

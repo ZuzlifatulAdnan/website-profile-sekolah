@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\Penghargaan;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class PenghargaanController extends Controller
@@ -21,8 +22,9 @@ class PenghargaanController extends Controller
         $prestasi = Penghargaan::when($judul, function ($query, $judul) {
             return $query->where('judul', 'like', '%' . $judul . '%');
         })
-        ->orderBy('created_at', 'desc')
-        ->paginate(9); // Mengatur jumlah item per halaman
+            ->orderBy('created_at', 'desc')
+            ->paginate(9); // Mengatur jumlah item per halaman
+        $announcement = Popup::first();
         return view(
             'user.prestasi',
             [
@@ -30,7 +32,9 @@ class PenghargaanController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'prestasi' => $prestasi]
+                'prestasi' => $prestasi,
+                'announcement' => $announcement,
+            ]
         );
     }
 }

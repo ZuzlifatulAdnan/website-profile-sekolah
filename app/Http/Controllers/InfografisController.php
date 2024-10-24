@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ekskul;
 use App\Models\Infografis;
 use App\Models\Jurusan;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class InfografisController extends Controller
@@ -23,6 +24,7 @@ class InfografisController extends Controller
         })
         ->orderBy('created_at', 'desc')
         ->paginate(9); // Mengatur jumlah item per halaman
+        $announcement = Popup::first(); 
         return view(
             'user.infografis',
             [
@@ -30,7 +32,9 @@ class InfografisController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'infografis' => $infografis]
+                'infografis' => $infografis,
+                'announcement' => $announcement,
+                ]
         );
     }
 }

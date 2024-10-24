@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Alumni;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class AlumniController extends Controller
@@ -21,8 +22,9 @@ class AlumniController extends Controller
         $alumni = Alumni::when($judul, function ($query, $judul) {
             return $query->where('nama', 'like', '%' . $judul . '%');
         })
-        ->orderBy('created_at', 'desc')
-        ->paginate(9); // Mengatur jumlah item per halaman
+            ->orderBy('created_at', 'desc')
+            ->paginate(9); // Mengatur jumlah item per halaman
+        $announcement = Popup::first();
         return view(
             'user.alumni',
             [
@@ -30,7 +32,9 @@ class AlumniController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'alumni' => $alumni]
+                'alumni' => $alumni,
+                'announcement' => $announcement,
+            ]
         );
     }
 }

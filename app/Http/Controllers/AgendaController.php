@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Agenda;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class AgendaController extends Controller
@@ -23,6 +24,7 @@ class AgendaController extends Controller
         })
         ->orderBy('created_at', 'desc')
         ->paginate(8); // Mengatur jumlah item per halaman
+        $announcement = Popup::first(); 
         return view(
             'user.agenda',
             [
@@ -30,7 +32,9 @@ class AgendaController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'agenda' => $agenda]
+                'agenda' => $agenda,
+                'announcement' => $announcement,
+                ]
         );
     }
 }

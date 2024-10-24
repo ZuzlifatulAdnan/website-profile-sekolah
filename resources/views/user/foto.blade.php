@@ -41,7 +41,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($foto as $item)
-                                <div class="col-xl-4 col-md-6">
+                                <div class="col-xl-4 col-md-6 zoom-in-effect">
                                     <button type="button" class="btn" data-toggle="modal"
                                         data-target="#fotoModal{{ $item->id }}">
                                         <div class="card aos-init aos-animate" data-aos="zoom-in" data-aos-delay="200">

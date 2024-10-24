@@ -40,7 +40,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($staff as $item)
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow d-flex flex-column align-items-center" style="width: 100%;">
                                         <div class="card-body d-flex flex-column align-items-center text-center px-4">
                                             <img src="{{ $item->image ? asset('storage/' . $item->image) : asset('path/to/placeholder-image.png') }}"

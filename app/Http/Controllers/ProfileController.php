@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\kategoriBerita;
+use App\Models\Popup;
 use App\Models\Profile;
 use Illuminate\Http\Request;
 
@@ -21,6 +22,7 @@ class ProfileController extends Controller
         $misi = Profile::where('section', 'Misi')->first();
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         return view('user.visi', [
             // Header
             'ekskuls' => $ekskuls,
@@ -29,7 +31,8 @@ class ProfileController extends Controller
             'visi' => $visi,
             'misi' => $misi,
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
+            'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
         ]);
     }
     public function sambutan()
@@ -41,6 +44,7 @@ class ProfileController extends Controller
         $sambutan = Profile::where('section', 'Sambutan')->first();
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
 
         return view('user.sambutan', [
             // Header
@@ -49,7 +53,8 @@ class ProfileController extends Controller
             // main
             'kategoriBerita' => $kategoriBerita,
             'beritaTerbaru' => $beritaTerbaru,
-            'sambutan' => $sambutan
+            'sambutan' => $sambutan,
+            'announcement' => $announcement,
         ]);
     }
 }

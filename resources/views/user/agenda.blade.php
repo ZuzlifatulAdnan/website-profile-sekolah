@@ -74,7 +74,7 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body" style="max-height: 400px; overflow-y: auto;">
+                                        <div class="modal-body zoom-in-effect" style="max-height: 400px; overflow-y: auto;">
                                             <div class="text-muted small mb-2">
                                                 <i class="fas fa-calendar-alt"></i>
                                                 {{ \Carbon\Carbon::parse($item->tanggal_mulai)->format('d F Y') }}

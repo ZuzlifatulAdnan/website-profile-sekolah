@@ -20,7 +20,7 @@
                             <div class="breadcrumb-item">
                                 <a href="#">Jurusan</a>
                             </div>
-                            <div class="breadcrumb-item active">{{ $jurusan->judul }}</div>
+                            <div class="breadcrumb-item active">{{ $jurusan->nama }}</div>
                         </div>
                     </div>
                     <div class="row">

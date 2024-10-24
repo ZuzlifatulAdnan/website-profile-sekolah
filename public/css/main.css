@@ -367,4 +367,24 @@
 .owl-dot.active span, .owl-dot:hover span {
   background: #869791;
 }
+.zoom-in-effect img {
+  transition: transform 0.4s ease; /* Smooth transition */
+}
+
+.zoom-in-effect:hover img,
+.zoom-in-effect:focus img { /* Adding focus state for accessibility */
+  transform: scale(1.1); /* Scale up on hover */
+}
+.video-zoom-in {
+  overflow: hidden; /* Hide overflow to avoid showing scrollbars */
+}
+
+.video-zoom-in iframe {
+  transition: transform 0.4s ease; /* Smooth transition */
+}
+
+.video-zoom-in:hover iframe,
+.video-zoom-in:focus iframe { /* Adding focus state for accessibility */
+  transform: scale(1.05); /* Scale up on hover */
+}
 

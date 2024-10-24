@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ekskul;
 use App\Models\Jurusan;
+use App\Models\Popup;
 use App\Models\vidio;
 use Illuminate\Http\Request;
 
@@ -23,6 +24,7 @@ class VidioController extends Controller
         })
             ->orderBy('created_at', 'desc')
             ->paginate(8); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.video',
             [
@@ -30,7 +32,8 @@ class VidioController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'videos' => $videos
+                'videos' => $videos,
+                'announcement' => $announcement,
             ]
         );
     }

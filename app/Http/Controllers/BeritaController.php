@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\kategoriBerita;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class BeritaController extends Controller
@@ -40,6 +41,7 @@ class BeritaController extends Controller
 
         // Fetch the latest news
         $beritaTerbaru = Berita::latest()->take(3)->get();
+        $announcement = Popup::first(); 
 
         return view('user.berita', [
             // Header
@@ -48,7 +50,8 @@ class BeritaController extends Controller
             //  main
             'berita' => $berita,
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
+            'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
         ]);
     }
     public function show($id)
@@ -58,6 +61,7 @@ class BeritaController extends Controller
         $jurusans = Jurusan::all();
         // Main
         $berita = Berita::find($id);
+        $announcement = Popup::first(); 
 
         // Check if the news article exists
         if (!$berita) {
@@ -68,7 +72,8 @@ class BeritaController extends Controller
             'ekskuls' => $ekskuls,
             'jurusans' => $jurusans,
             // Main
-            'berita' => $berita
+            'berita' => $berita,
+            'announcement' => $announcement,
 
         ]);
     }

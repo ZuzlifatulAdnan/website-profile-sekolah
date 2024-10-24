@@ -7,6 +7,7 @@ use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\kategoriBerita;
 use App\Models\Pesan;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class PesanController extends Controller
@@ -21,6 +22,7 @@ class PesanController extends Controller
         // Main Side
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         return view('user.pesan', [
             // Header
             'ekskuls' => $ekskuls,
@@ -29,7 +31,8 @@ class PesanController extends Controller
             
             // Main side
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
+            'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
         ]);
     }
     public function store(Request $request)

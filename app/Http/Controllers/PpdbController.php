@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\kategoriBerita;
+use App\Models\Popup;
 use App\Models\Ppdb;
 use Illuminate\Http\Request;
 
@@ -26,6 +27,7 @@ class PpdbController extends Controller
             ->where('kategori', 'Alur')
             ->orderBy('created_at', 'desc')
             ->paginate(9); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.alur',
             [
@@ -33,7 +35,8 @@ class PpdbController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'alur' => $alur
+                'alur' => $alur,
+                'announcement' => $announcement,
             ]
         );
     }
@@ -46,6 +49,7 @@ class PpdbController extends Controller
         $alur = Ppdb::find($id);
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         // Check if the news article exists
         if (!$alur) {
             return abort(404, 'alur tidak ditemukan.');
@@ -57,8 +61,8 @@ class PpdbController extends Controller
             // Main
             'alur' => $alur,
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
-
+            'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
         ]);
     }
     public function brosur(Request $request)
@@ -76,6 +80,7 @@ class PpdbController extends Controller
             ->where('kategori', 'Brosur')
             ->orderBy('created_at', 'desc')
             ->paginate(9); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.brosur',
             [
@@ -83,7 +88,8 @@ class PpdbController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'brosur' => $brosur
+                'brosur' => $brosur,
+                'announcement' => $announcement,
             ]
         );
     }
@@ -96,6 +102,7 @@ class PpdbController extends Controller
         $brosur = Ppdb::find($id);
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         // Check if the news article exists
         if (!$brosur) {
             return abort(404, 'brosur tidak ditemukan.');
@@ -107,7 +114,8 @@ class PpdbController extends Controller
             // Main
             'brosur' => $brosur,
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
+            'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
 
         ]);
     }
@@ -126,6 +134,7 @@ class PpdbController extends Controller
             ->where('kategori', 'Kuota')
             ->orderBy('created_at', 'desc')
             ->paginate(9); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.kuota',
             [
@@ -133,7 +142,8 @@ class PpdbController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'kuota' => $kuota
+                'kuota' => $kuota,
+                'annoucment'=>$announcement
             ]
         );
     }
@@ -146,6 +156,7 @@ class PpdbController extends Controller
         $kuota = Ppdb::find($id);
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         // Check if the news article exists
         if (!$kuota) {
             return abort(404, 'kuota tidak ditemukan.');
@@ -157,8 +168,8 @@ class PpdbController extends Controller
             // Main
             'kuota' => $kuota,
             'kategoriBerita' => $kategoriBerita,
-            'beritaTerbaru' => $beritaTerbaru
-
+            'beritaTerbaru' => $beritaTerbaru,
+            'annoucment'=>$announcement
         ]);
     }
 }

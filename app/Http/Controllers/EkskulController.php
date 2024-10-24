@@ -6,6 +6,7 @@ use App\Models\Berita;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\kategoriBerita;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class EkskulController extends Controller
@@ -25,6 +26,7 @@ class EkskulController extends Controller
         // Side Main
         $kategoriBerita = kategoriBerita::withCount('berita')->get();
         $beritaTerbaru = Berita::latest()->take(5)->get();
+        $announcement = Popup::first(); 
         return view('user.ekskul', [
             // Header
             'ekskuls' => $ekskuls,
@@ -34,6 +36,7 @@ class EkskulController extends Controller
             // Side main
             'kategoriBerita' => $kategoriBerita,
             'beritaTerbaru' => $beritaTerbaru,
+            'announcement' => $announcement,
         ]);
     }
 }

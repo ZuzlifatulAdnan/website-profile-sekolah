@@ -41,7 +41,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($alumni as $item)
-                                <div class="col-md-4 mb-4">
+                                <div class="col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow" style="width: 100%;">
                                         <div class="card-body text-center">
                                             @if ($item->image)

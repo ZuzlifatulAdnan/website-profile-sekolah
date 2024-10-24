@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\Media;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class MediaController extends Controller
@@ -24,6 +25,7 @@ class MediaController extends Controller
             ->where('kategori', 'Dokumen')
             ->orderBy('created_at', 'desc')
             ->paginate(10); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.download',
             [
@@ -31,7 +33,8 @@ class MediaController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'download' => $download
+                'download' => $download,
+                'announcement' => $announcement,
             ]
         );
     }
@@ -50,6 +53,7 @@ class MediaController extends Controller
             ->where('kategori', 'Foto')
             ->orderBy('created_at', 'desc')
             ->paginate(10); // Mengatur jumlah item per halaman
+            $announcement = Popup::first(); 
         return view(
             'user.foto',
             [
@@ -57,7 +61,8 @@ class MediaController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'foto' => $foto
+                'foto' => $foto,
+                'announcement' => $announcement,
             ]
         );
     }

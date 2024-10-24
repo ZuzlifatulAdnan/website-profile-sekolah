@@ -21,7 +21,7 @@
             </div>
             <div class="section-body">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8 zoom-in-effect">
                         <div class="card">
                             <div class="card-body">
                                 <h3 class="text-center text-dark mb-4">
@@ -92,7 +92,7 @@
                                         KATEGORI BERITA</span></h5>
                                 <div class="row">
                                     @foreach ($kategoriBerita as $kategori)
-                                        <div class="col-12">
+                                        <div class="col-12 ">
                                             <a href="{{ route('berita', ['kategori_berita_id' => $kategori->id]) }}"
                                                 class="list-group-item d-flex justify-content-between align-items-center mb-2"
                                                 style="text-decoration: none; display: block;">

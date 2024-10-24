@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ekskul;
 use App\Models\Jurusan;
+use App\Models\Popup;
 use App\Models\Staff;
 use Illuminate\Http\Request;
 
@@ -21,13 +22,15 @@ class StaffController extends Controller
         })->latest()->paginate(9);
         // masukn key name kedalam array users
         $staff->appends(['nama' => $keyword]);
+        $announcement = Popup::first(); 
 
         return view('user.staff', [
             // Header
             'ekskuls' => $ekskuls,
             'jurusans' => $jurusans,
             // main
-            'staff' => $staff
+            'staff' => $staff,
+            'announcement' => $announcement,
         ]);
     }
 }

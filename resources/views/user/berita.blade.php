@@ -49,7 +49,7 @@
                     @else
                         <div class="row justify-content-center g-4">
                             @foreach ($berita as $item)
-                                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                                <div class="col-12 col-sm-6 col-md-4 mb-4 zoom-in-effect">
                                     <div class="card shadow-sm d-flex flex-column align-items-cente"
                                         style="min-height: 400px;">
                                         @if ($item->image)

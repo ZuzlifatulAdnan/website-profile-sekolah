@@ -26,7 +26,7 @@
                     </h3>
 
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-12 zoom-in-effect">
                             @if ($berita->image)
                                 <!-- Responsive image with max height to fit different screen sizes -->
                                 <img src="{{ asset('storage/' . $berita->image) }}" alt="{{ $berita->judul }}"

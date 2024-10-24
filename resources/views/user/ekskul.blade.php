@@ -24,7 +24,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-8 zoom-in-effect">
                             <div class="card">
                                 <div class="card-body">
                                     <!-- Title of the Ekskul -->

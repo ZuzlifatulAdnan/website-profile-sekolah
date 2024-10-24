@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Ekskul;
 use App\Models\Jurusan;
 use App\Models\Pengumuman;
+use App\Models\Popup;
 use Illuminate\Http\Request;
 
 class PengumumanController extends Controller
@@ -23,6 +24,7 @@ class PengumumanController extends Controller
         })
         ->orderBy('created_at', 'desc')
         ->paginate(8); // Mengatur jumlah item per halaman
+        $announcement = Popup::first(); 
         return view(
             'user.pengumuman',
             [
@@ -30,7 +32,9 @@ class PengumumanController extends Controller
                 'ekskuls' => $ekskuls,
                 'jurusans' => $jurusans,
                 // Main
-                'pengumuman' => $pengumuman]
+                'pengumuman' => $pengumuman,
+                'announcement' => $announcement,
+                ]
         );
     }
 }
