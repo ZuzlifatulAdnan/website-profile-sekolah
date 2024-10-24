@@ -18,7 +18,7 @@ return new class extends Migration
             // $table->date('tanggal_upload')->nullable();
             $table->foreignId('users_id')->constrained('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('image', 255)->nullable();
-            $table->string('kategori')->nullable();
+            $table->string('kategori_berita_id')->constrained('kategori_beritas')->cascadeOnDelete()->cascadeOnUpdate();
             // $table->enum('kategori', ['Pendidikan', 'Acara', 'Pengumuman']);
             $table->timestamps();
         });

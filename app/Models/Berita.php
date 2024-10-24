@@ -14,11 +14,16 @@ class Berita extends Model
         'tanggal_upload',
         'users_id',
         'image',
-        'kategori',
+        'kategori_berita_id',
     ];
     protected $table = 'beritas';
     public function users()
     {
         return $this->belongsTo(User::class, 'users_id', 'id');
     }
+    public function kategoriBerita()
+    {
+        return $this->belongsTo(kategoriBerita::class, 'kategori_berita_id', 'id');
+    }
+
 }

@@ -21,7 +21,7 @@ class PesanResource extends Resource
     protected static ?string $navigationLabel = 'Pesan';
     protected static ?string $activeNavigationIcon = 'heroicon-o-envelope';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 12;
+    protected static ?int $navigationSort = 13;
     public static function form(Form $form): Form
     {
         return $form

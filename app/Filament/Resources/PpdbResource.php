@@ -22,7 +22,7 @@ class PpdbResource extends Resource
     protected static ?string $navigationLabel = 'PPDB';
     protected static ?string $activeNavigationIcon = 'heroicon-o-check-badge';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 14; 
+    protected static ?int $navigationSort = 15; 
     public static function form(Form $form): Form
     {
         return $form
@@ -41,10 +41,23 @@ class PpdbResource extends Resource
                         'Kuota' => 'Kuota',
                     ])
                     ->required(),
-                Forms\Components\Textarea::make('deskripsi')
-                    ->label('Deskripsi PPDB')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi PPDB...'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Gambar PPDB')
                     ->image()
@@ -58,13 +71,13 @@ class PpdbResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Gambar PPDB')
+                    ->label('Gambar ')
                 ,
                 Tables\Columns\TextColumn::make('judul')
-                    ->label('Judul PPDB')
+                    ->label('Judul')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('kategori')
-                    ->label('Kategori PPDB')
+                    ->label('Kategori')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Users.name')
                     ->label('Pengupload')

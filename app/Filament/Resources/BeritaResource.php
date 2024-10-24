@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BeritaResource\Pages;
 use App\Filament\Resources\BeritaResource\RelationManagers;
 use App\Models\Berita;
+use App\Models\kategoriBerita;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -33,31 +34,29 @@ class BeritaResource extends Resource
                     ->label('Judul')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Select::make('kategori')
+                Forms\Components\Select::make('kategori_berita_id') // Ubah dari 'kategori' ke 'kategori_berita_id'
                     ->label('Kategori')
-                    ->options([
-                        'Pendidikan' => 'Pendidikan',
-                        'Penghargaan' => 'Penghargaan',
-                        'Event' => 'Event',
-                    ])
+                    ->options(function () {
+                        return kategoriBerita::all()->pluck('nama', 'id'); // Ambil semua kategori
+                    })
                     ->required(),
                 Forms\Components\RichEditor::make('deskripsi')
-                ->label('Deskripsi')
-                ->required()
-                ->toolbarButtons([
-                    'bold',
-                    'italic',
-                    'underline',
-                    'strike',
-                    'link',
-                    'bulletList',
-                    'orderedList',
-                    'blockquote',
-                    'codeBlock',
-                    'redo',
-                    'undo',
-                ])
-                ->placeholder('Tulis deskripsi berita...'),
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi berita...'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Foto Berita')
                     ->image()
@@ -72,14 +71,14 @@ class BeritaResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto Berita'),
+                    ->label('Foto'),
                 Tables\Columns\TextColumn::make('judul')
                     ->label('Judul')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('users.name')
                     ->label('Pengupload')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('kategori')
+                Tables\Columns\TextColumn::make('kategoriBerita.nama')
                     ->label('Kategori')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')

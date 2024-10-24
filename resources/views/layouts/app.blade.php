@@ -46,10 +46,9 @@
         <div class="main-wrapper">
             <!-- Header -->
             @include('components.header')
-
             <!-- Content -->
             @yield('main')
-          
+
             <!-- Footer -->
             @include('components.footer')
         </div>
@@ -69,6 +68,19 @@
     <!-- Template JS File -->
     <script src="{{ asset('js/scripts.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+        // Cek apakah pengguna ingin menyembunyikan modal
+        if (!localStorage.getItem('hideWelcomeModal')) {
+            // Tampilkan modal
+            $('#welcomeModal').modal('show');
+        }
+
+        // Event listener untuk tombol "Jangan Tampilkan Lagi"
+        document.getElementById('dismissModalButton').addEventListener('click', function() {
+            $('#welcomeModal').modal('hide'); // Menyembunyikan modal
+            localStorage.setItem('hideWelcomeModal', 'true'); // Simpan status agar tidak tampil lagi
+        });
+    </script>
 </body>
 
 </html>

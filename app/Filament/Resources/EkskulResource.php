@@ -30,14 +30,29 @@ class EkskulResource extends Resource
                     ->label('Judul')
                     ->maxLength(255)
                     ->required(),
-                Forms\Components\TextInput::make('deskripsi')
-                    ->label('Deskripsi')
-                    ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
                     ->directory('uploads/ekskul')
                     ->visibility('public'),
+                Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi Ekskul...'),
+
             ]);
     }
 
@@ -48,11 +63,8 @@ class EkskulResource extends Resource
                 Tables\Columns\TextColumn::make('judul')
                     ->label('Judul')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('deskripsi')
-                ->label('Deskripsi')
-                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
-                ->label('Foto Ekskul')
+                    ->label('Foto')
                 ,
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

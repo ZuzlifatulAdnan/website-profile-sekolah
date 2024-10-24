@@ -1,14 +1,11 @@
 /* Basic Navbar Styling */
 .navbar {
   position: sticky;
-  /* Atur posisi sticky */
   top: 0;
-  /* Menjaga navbar di atas saat scroll */
   background-color: white !important;
   border-bottom: 1px solid #e0e0e0;
   padding: 10px 20px;
   z-index: 1000;
-  /* Pastikan navbar berada di atas elemen lainnya */
 }
 
 .navbar-brand {
@@ -22,138 +19,59 @@
   width: auto;
 }
 
-.navbar-brand span {
-  font-weight: bold;
-  color: #007bff;
-  margin-left: 10px;
-  /* Space between logo and text */
-}
-
-/* Navbar Links */
-.navbar-nav {
-  padding: 0 15px;
-}
-
 .navbar-nav .nav-link {
   color: black;
   font-weight: 500;
   margin-right: 20px;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
   position: relative;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-/* Active and Hover States */
-.nav-item.active .nav-link,
-.navbar-nav .nav-link:hover {
-  color: blue;
-  border-bottom: 3px solid blue;
-}
-
-/* Dropdown Styling */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.dropdown-menu {
-  display: none;
-  opacity: 0;
-  position: absolute;
-  background-color: white;
-  transition: opacity 0.3s ease;
-}
-
-/* Dropdown Item Styling to Match Navbar */
-.dropdown-menu .dropdown-item {
-  font-size: 1.1rem;
-  /* Match font size with navbar links */
-  color: black;
-  /* Same text color */
-  font-weight: 500;
-  /* Same font weight */
-  padding: 10px 20px;
   transition: color 0.3s ease;
 }
 
-.dropdown-menu .dropdown-item:hover {
-  color: blue;
-  /* Change color on hover */
-  background-color: #e9ecef;
-  /* Hover background color */
+/* Hover and active states */
+.nav-item.active .nav-link,
+.navbar-nav .nav-link:hover {
+  color: blue !important;
 }
 
-/* Responsive Styling */
+/* Dropdown Styling */
+@media (min-width: 768px) {
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
 
-/* For screens wider than 1200px */
-@media (max-width: 1200px) {
-  .navbar-brand img {
-    max-height: 45px;
+@media (max-width: 767px) {
+  .dropdown-menu {
+    display: none;
+    position: static;
+    float: none;
+    box-shadow: none;
   }
 
-  .navbar-nav .nav-link,
+  .nav-item .dropdown-menu.show {
+    display: block;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
   .dropdown-menu .dropdown-item {
-    /* Matching font size for dropdown items */
-    font-size: 1.3rem;
+    padding: 10px 15px;
   }
 }
 
-/* For screens wider than 992px */
-@media (max-width: 992px) {
-  .navbar-brand img {
-    max-height: 50px;
-  }
-
-  .navbar-nav .nav-link,
-  .dropdown-menu .dropdown-item {
-    /* Matching font size for dropdown items */
-    font-size: 1.2rem;
-    margin-right: 15px;
-  }
-}
-
-/* For screens wider than 768px */
-@media (max-width: 768px) {
-  .navbar-brand img {
-    max-height: 60px;
-  }
-
-  .navbar-nav .nav-link,
-  .dropdown-menu .dropdown-item {
-    /* Matching font size for dropdown items */
-    font-size: 1rem;
-    margin-right: 10px;
-  }
-}
-
-/* For screens smaller than 600px */
-@media (max-width: 600px) {
-  .navbar-brand img {
-    max-height: 50px;
-  }
-
-  .navbar-nav .nav-link,
-  .dropdown-menu .dropdown-item {
-    /* Matching font size for dropdown items */
-    font-size: 0.9rem;
-    margin-right: 5px;
-  }
-}
-
-/* For screens smaller than 500px */
-@media (max-width: 500px) {
-  .navbar-brand img {
-    max-height: 40px;
-  }
-
-  .navbar-nav .nav-link,
-  .dropdown-menu .dropdown-item {
-    /* Matching font size for dropdown items */
-    font-size: 0.8rem;
-    margin-right: 5px;
-  }
-}
 
 /* Navbar Toggler Styling */
 .navbar-toggler {
@@ -164,45 +82,6 @@
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
-/* Tombol Scroll to Top */
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  /* Jarak dari bawah */
-  right: 20px;
-  /* Jarak dari kanan */
-  display: none;
-  /* Tersembunyi secara default */
-  background-color: #007bff;
-  /* Warna latar belakang biru */
-  color: white;
-  /* Warna teks (ikon) */
-  border: none;
-  /* Tanpa border */
-  border-radius: 5px;
-  /* Sudut melengkung */
-  padding: 10px;
-  /* Padding */
-  cursor: pointer;
-  /* Pointer saat hover */
-  font-size: 18px;
-  /* Ukuran font */
-  z-index: 1000;
-  /* Pastikan di atas elemen lain */
-  transition: background-color 0.3s;
-  /* Efek transisi */
-}
-
-.scroll-to-top:hover {
-  background-color: #0056b3;
-  /* Warna saat hover lebih gelap */
-}
-
-/* Gaya untuk ikon di dalam tombol */
-.scroll-to-top i {
-  font-size: 16px;
-  /* Ukuran ikon */
-}
 
 /* Footer */
 /* Styling footer */
@@ -453,5 +332,39 @@
 
 .modal-backdrop {
   z-index: 1050 !important; /* Ensures the backdrop is below the modal */
+}
+/* berita */
+.owl-carousel .owl-item {
+  padding: 3px;
+}
+.date-badge .badge {
+  font-size: 18px;
+  padding: 5px 10px;
+}
+.owl-nav {
+  position: absolute;
+  top: -50px;
+  right: 0;
+}
+.owl-prev, .owl-next {
+  font-size: 24px !important;
+  margin: 0 5px;
+}
+.owl-dots {
+  text-align: center;
+  margin-top: 20px;
+}
+.owl-dot span {
+  width: 10px;
+  height: 10px;
+  margin: 5px 7px;
+  background: #D6D6D6;
+  display: block;
+  -webkit-backface-visibility: visible;
+  transition: opacity .2s ease;
+  border-radius: 30px;
+}
+.owl-dot.active span, .owl-dot:hover span {
+  background: #869791;
 }
 

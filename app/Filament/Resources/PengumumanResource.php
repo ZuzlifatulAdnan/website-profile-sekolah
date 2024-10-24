@@ -21,7 +21,7 @@ class PengumumanResource extends Resource
     protected static ?string $navigationLabel = 'Pengumuman';
     protected static ?string $activeNavigationIcon = 'heroicon-o-megaphone';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 11;
+    protected static ?int $navigationSort = 12;
     public static function form(Form $form): Form
     {
         return $form
@@ -32,10 +32,23 @@ class PengumumanResource extends Resource
                 ->label('Judul Pengumuman')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('deskripsi')
-                ->label('Deskripsi Pengumuman')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi Pengumuman...'),
             ]);
     }
 
@@ -44,7 +57,7 @@ class PengumumanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('judul')
-                ->label('Judul Pengumuman')
+                ->label('Judul ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Users.name')
                     ->label('Pengupload')

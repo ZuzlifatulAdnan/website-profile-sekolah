@@ -22,13 +22,13 @@ class ProfileResource extends Resource
     protected static ?string $navigationLabel = 'Profile';
     protected static ?string $activeNavigationIcon = 'heroicon-o-user-circle';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 15; 
+    protected static ?int $navigationSort = 16;
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\Select::make('section')
-                ->label('Kategor Profile')
+                    ->label('Kategor Profile')
                     ->options([
                         'Visi' => 'Visi',
                         'Misi' => 'Misi',
@@ -36,27 +36,27 @@ class ProfileResource extends Resource
                         'Sambutan' => 'Sambutan',
                     ])
                     ->required(),
-                Forms\Components\FileUpload::make('foto')
-                ->label('Foto Profile')
-                    ->image()
-                    ->directory('uploads/profile')
-                    ->visibility('public'),
+                // Forms\Components\FileUpload::make('foto')
+                //     ->label('Foto')
+                //     ->image()
+                //     ->directory('uploads/agenda')
+                //     ->visibility('public'),
                 Forms\Components\RichEditor::make('deskripsi')
-                ->label('Deskripsi')
-                ->required()
-                ->toolbarButtons([
-                    'bold',
-                    'italic',
-                    'underline',
-                    'strike',
-                    'link',
-                    'bulletList',
-                    'orderedList',
-                    'blockquote',
-                    'codeBlock',
-                    'redo',
-                    'undo',
-                ])
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
             ]);
     }
 
@@ -64,11 +64,11 @@ class ProfileResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('foto')
-                ->label('Foto Profile')
-                    ->searchable(),
+                // Tables\Columns\TextColumn::make('foto')
+                //     ->label('Foto')
+                //     ->searchable(),
                 Tables\Columns\TextColumn::make('section')
-                ->label('Kategori Profile')
+                    ->label('Kategori')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

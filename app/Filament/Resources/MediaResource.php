@@ -21,7 +21,7 @@ class MediaResource extends Resource
     protected static ?string $navigationLabel = 'Media';
     protected static ?string $activeNavigationIcon = 'heroicon-o-folder';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 9;
+    protected static ?int $navigationSort = 10;
     public static function form(Form $form): Form
     {
         return $form
@@ -36,12 +36,12 @@ class MediaResource extends Resource
                     ->label('Kategori Media')
                     ->options([
                         'Foto' => 'Foto',
-                        'Vidio' => 'Vidio',
                         'Dokumen' => 'Dokumen',
                     ])
                     ->required(),
                 Forms\Components\FileUpload::make('file')
                     ->label('File')
+                    ->acceptedFileTypes(['application/pdf', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'image/jpeg', 'image/png'])
                     ->required()
                     ->directory('uploads/media')
                     ->visibility('public'),
@@ -68,13 +68,6 @@ class MediaResource extends Resource
                         // Check if the file is an image
                         if (in_array($fileExtension, ['jpg', 'jpeg', 'png', 'gif'])) {
                             return '<img src="' . asset('storage/uploads/media/' . $state) . '" width="100" />';
-                        }
-                        // Check if the file is a video
-                        elseif (in_array($fileExtension, ['mp4', 'mov', 'avi', 'webm'])) {
-                            return '<video width="200" controls>
-                                  <source src="' . asset('storage/uploads/media/' . $state) . '" type="video/' . $fileExtension . '">
-                                Your browser does not support the video tag.
-                                </video>';
                         }
                         // Check if the file is a document
                         elseif (in_array($fileExtension, ['pdf', 'doc', 'docx'])) {

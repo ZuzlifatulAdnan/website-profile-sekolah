@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateMedia extends CreateRecord
 {
     protected static string $resource = MediaResource::class;
+     // Override view agar bisa custom JavaScript
+    //  protected function getView(): string
+    //  {
+    //      return 'filament.pages.media.create-media';
+    //  }
 }

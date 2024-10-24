@@ -58,7 +58,7 @@ class HeroResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto Banner'),
+                    ->label('Foto'),
                 Tables\Columns\TextColumn::make('nama')
                     ->label('Nama')
                     ->searchable(),

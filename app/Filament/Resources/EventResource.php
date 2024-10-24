@@ -32,10 +32,23 @@ class EventResource extends Resource
                     ->label('Judul')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('deskripsi')
+                    Forms\Components\RichEditor::make('deskripsi')
                     ->label('Deskripsi')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi Event...'),
                 Forms\Components\DatePicker::make('tanggal_mulai')
                     ->label('Tanggal Mulai')
                     ->required(),
@@ -76,7 +89,7 @@ class EventResource extends Resource
                     ->label('Lokasi')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto Event')
+                    ->label('Foto')
                 ,
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

@@ -50,7 +50,7 @@ class AlumniResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto Alumni'),
+                    ->label('Foto'),
                 Tables\Columns\TextColumn::make('nama')
                     ->label('Nama Lengkap')
                     ->searchable(),

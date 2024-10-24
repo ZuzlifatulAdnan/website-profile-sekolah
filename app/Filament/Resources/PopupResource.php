@@ -21,7 +21,7 @@ class PopupResource extends Resource
     protected static ?string $navigationLabel = 'Pop Up';
     protected static ?string $activeNavigationIcon = 'heroicon-o-information-circle';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 13;    
+    protected static ?int $navigationSort = 14;    
     public static function form(Form $form): Form
     {
         return $form

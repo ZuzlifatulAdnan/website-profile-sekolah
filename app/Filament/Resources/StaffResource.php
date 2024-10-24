@@ -21,7 +21,7 @@ class StaffResource extends Resource
     protected static ?string $navigationLabel = 'STAFF';
     protected static ?string $activeNavigationIcon = 'heroicon-o-briefcase';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 16; 
+    protected static ?int $navigationSort = 17; 
     public static function form(Form $form): Form
     {
         return $form
@@ -52,19 +52,19 @@ class StaffResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama')
-                    ->label('Nama STAFF')
+                    ->label('Nama ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('posisi')
-                    ->label('Posisi STAFF')
+                    ->label('Posisi ')
                     ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto STAFF')
+                    ->label('Foto ')
                 ,
                 Tables\Columns\TextColumn::make('email')
-                    ->label('Email STAFF')
+                    ->label('Email ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('no_telp')
-                    ->label('No Telp STAFF')
+                    ->label('No Telp ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

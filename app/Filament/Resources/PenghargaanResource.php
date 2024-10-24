@@ -21,7 +21,7 @@ class PenghargaanResource extends Resource
     protected static ?string $navigationLabel = 'Penghargaan';
     protected static ?string $activeNavigationIcon = 'heroicon-o-trophy';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 10;
+    protected static ?int $navigationSort = 11;
 
     public static function form(Form $form): Form
     {
@@ -38,10 +38,23 @@ class PenghargaanResource extends Resource
                     ->image()
                     ->directory('uploads/penghargaan')
                     ->visibility('public'),
-                Forms\Components\Textarea::make('deskripsi')
-                    ->label('deskripsi')
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->required()
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi Penghargaan...'),
             ]);
     }
 
@@ -50,7 +63,7 @@ class PenghargaanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Foto Penghargaan'),
+                    ->label('Foto '),
                 Tables\Columns\TextColumn::make('judul')
                     ->label('judul')
                     ->searchable(),

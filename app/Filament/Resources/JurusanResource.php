@@ -28,14 +28,26 @@ class JurusanResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('nama')
-                ->label('Nama Jurusan')
+                    ->label('Nama Jurusan')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('deskripsi')
-                ->label('Deskripsi')
+                Forms\Components\RichEditor::make('deskripsi')
+                    ->label('Deskripsi')
                     ->required()
-                    ->maxLength(65535)
-                    ->columnSpanFull(),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'redo',
+                        'undo',
+                    ])
+                    ->placeholder('Tulis deskripsi Jurusan...'),
             ]);
     }
 
@@ -44,7 +56,7 @@ class JurusanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('nama')
-                ->label('Nama Jurusan')
+                    ->label('Nama')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

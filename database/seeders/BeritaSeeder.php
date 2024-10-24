@@ -20,7 +20,7 @@ class BeritaSeeder extends Seeder
                 // 'tanggal_upload' => '2024-08-01',
                 'users_id' => 1,
                 'image' => '',
-                'kategori' => 'Pendidikan',
+                'kategori_berita_id' => '1',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
@@ -29,7 +29,7 @@ class BeritaSeeder extends Seeder
                 // 'tanggal_upload' => '2024-08-10',
                 'users_id' => 1,
                 'image' => '',
-                'kategori' => 'Pengumuman',
+                'kategori_berita_id' => '1',
                 'created_at' => date('Y-m-d H:i:s'),
             ],
             [
@@ -38,7 +38,7 @@ class BeritaSeeder extends Seeder
                 // 'tanggal_upload' => '2024-08-20',
                 'users_id' => 1,
                 'image' => '',
-                'kategori' => 'Acara',
+                'kategori_berita_id' => '1',
                 'created_at' => date('Y-m-d H:i:s'),
             ]
         ]);

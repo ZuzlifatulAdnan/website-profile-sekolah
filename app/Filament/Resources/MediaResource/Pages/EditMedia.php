@@ -16,4 +16,8 @@ class EditMedia extends EditRecord
             Actions\DeleteAction::make(),
         ];
     }
+    // protected function getView(): string
+    // {
+    //     return 'filament.pages.media.edit-media';
+    // }
 }

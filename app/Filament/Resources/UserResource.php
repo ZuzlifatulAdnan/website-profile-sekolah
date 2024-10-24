@@ -22,7 +22,7 @@ class UserResource extends Resource
     protected static ?string $navigationLabel = 'User';
     protected static ?string $activeNavigationIcon = 'heroicon-o-user-group';
     protected static ?string $navigationGroup = 'Master';
-    protected static ?int $navigationSort = 17;
+    protected static ?int $navigationSort = 18;
     public static function form(Form $form): Form
     {
         return $form
@@ -61,7 +61,7 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ->label('Nama User')
+                    ->label('Nama ')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->label('Email')
