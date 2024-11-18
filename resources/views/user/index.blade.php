@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
-                                    <img src="https://smkn4-bdl.sch.id/public/img/section/1705899671_fdc4b6337eff3d31abad.png"
+                                    <img src="{{ asset('img/visi.png') }}"
                                         alt="" class="img-fluid">
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                                 </div>
                                 <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
-                                    <img src="https://smkn4-bdl.sch.id/public/template/frontend/herobiz/desktop/assets/img/pengumuman.png"
+                                    <img src="{{ asset('img/pengumuman.png') }}"
                                         alt="" class="img-fluid">
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                                 </div>
                                 <div class="col-lg-3 order-1 order-lg-2 text-center aos-init aos-animate zoom-in-effect"
                                     data-aos="fade-up" data-aos-delay="200">
-                                    <img src="https://smkn4-bdl.sch.id/public/template/frontend/herobiz/desktop/assets/img/pengumuman.png"
+                                    <img src="{{ asset('img/agenda.png') }}"
                                         alt="" class="img-fluid">
                                 </div>
                             </div>

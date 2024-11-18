@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/login', function() {
+    return redirect('administrator/login');
+})->name('login');
 
 Route::redirect('/', '/beranda');
 // Beranda Halaman Route
